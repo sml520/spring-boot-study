@@ -67,4 +67,17 @@ public class ArticleController {
 
         return AjaxResponse.success();
     }
+
+    @RequestMapping(value = "/save2")
+    public AjaxResponse save2() {
+        com.sxb.model.Article article = new com.sxb.model.Article();
+        article.setId(3);
+        article.setAuthor("王五");
+        article.setContent("Spring Cloud");
+        article.setCreateTime(new Date());
+        article.setTitle("cloud");
+        articleService.save2(article);
+
+        return AjaxResponse.success();
+    }
 }

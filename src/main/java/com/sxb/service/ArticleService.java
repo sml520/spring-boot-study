@@ -11,4 +11,5 @@ public interface ArticleService {
 
     void save(Article article);
 
+    void save2(com.sxb.model.Article article);
 }
