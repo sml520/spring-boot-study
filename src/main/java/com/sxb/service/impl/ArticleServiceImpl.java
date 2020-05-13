@@ -4,6 +4,7 @@ import com.sxb.bean.Article;
 import com.sxb.dao.ArticleJdbcDao;
 import com.sxb.dao.ArticleMapper;
 import com.sxb.service.ArticleService;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,6 +24,7 @@ public class ArticleServiceImpl implements ArticleService {
     private ArticleMapper articleMapper;
 
     @Override
+    @Async("taskExecutor")
     public void save(Article article) {
         articleJdbcDao.save(article);
         System.out.println("保存成功!");

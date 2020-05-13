@@ -5,7 +5,6 @@ import com.sxb.bean.Article;
 import com.sxb.service.ArticleService;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -79,5 +79,24 @@ public class ArticleController {
         articleService.save2(article);
 
         return AjaxResponse.success();
+    }
+
+    public static int[] twoSum(int[] nums, int target) {
+
+        for (int i=0; i<nums.length; i++) {
+           for (int j=i+1; j<nums.length; j++) {
+               if (nums[i]+nums[j] == target) {
+                   return new int[]{i,j};
+               }
+           }
+        }
+        return new int[2];
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {3,4,6,5};
+        int target = 10;
+        int[] res = twoSum(nums, target);
+        System.out.println(Arrays.toString(res));
     }
 }

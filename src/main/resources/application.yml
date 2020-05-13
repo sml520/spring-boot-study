@@ -16,4 +16,7 @@ spring:
 mybatis:
     mapper-locations: classpath*:com/sxb/mapping/*.xml
 
+logging:
+    config: classpath:log4j2.xml
+
 
