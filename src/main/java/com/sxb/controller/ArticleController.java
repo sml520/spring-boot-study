@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.LinkedList;
 
 /**
  * @author 张元亮
@@ -98,5 +100,7 @@ public class ArticleController {
         int target = 10;
         int[] res = twoSum(nums, target);
         System.out.println(Arrays.toString(res));
+        new ArrayList<>();
+        new LinkedList<>();
     }
 }

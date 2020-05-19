@@ -13,16 +13,16 @@ import org.springframework.scheduling.annotation.EnableAsync;
  */
 @SpringBootApplication
 @MapperScan(basePackages = {"com.sxb.dao"})
-@ServletComponentScan(basePackages="com.sxb")
+@ServletComponentScan(basePackages = "com.sxb")
 @EnableAsync
 public class SpringBootStudyApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(SpringBootStudyApplication.class, args);
         context.addApplicationListener(applicationEvent -> {
 
         });
 
-	}
+    }
 
 }
